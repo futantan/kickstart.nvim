@@ -130,11 +130,11 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
+    "lalitmee/cobalt2.nvim",
+    event = { "ColorSchemePre" }, -- if you want to lazy load
+    dependencies = { "tjdevries/colorbuddy.nvim" },
+    init = function()
+        require("colorbuddy").colorscheme("cobalt2")
     end,
   },
 
